@@ -1,0 +1,28 @@
+# Dataset generation: identical recipe to the descriptor repo of this cluster
+# (same compositions, batches, and seeds) so cross-repo numbers are
+# internally consistent. Every batch below is one generation group, the unit
+# of the leakage-safe split. Labels are surrogate teacher labels, not DFT.
+teacher: chgnet
+seed: 20260807
+
+compositions:            # in distribution
+  - Ti
+  - Zr
+  - Nb
+  - TiZr
+  - TiNb
+  - ZrNb
+  - TiZrNb
+holdout_compositions:    # never trained on, transfer test only
+  - Ti2ZrNb
+  - TiZrNb2
+
+reps_small: 2            # 16-atom cells
+reps_large: 3            # 54-atom cells
+rattle_amplitudes: [0.05, 0.10, 0.18]
+rattle_frames_per_batch: 30
+rattle_frames_large: 12
+strain_frames_per_batch: 30
+md_temperatures_k: [600, 1400]
+md_steps: 240
+md_sample_every: 12

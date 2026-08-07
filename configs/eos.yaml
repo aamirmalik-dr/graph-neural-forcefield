@@ -1,0 +1,9 @@
+# Equation of state: model vs teacher E-V curves and Birch-Murnaghan fits,
+# with real-DFT Materials Project anchors for the elemental BCC metals.
+# Anchor precedence: data/anchors_mp.json (fetched, CC BY 4.0) if present,
+# else data/anchors_literature.json (committed fallback with citations).
+compositions: [Ti, Zr, Nb, TiZrNb]
+reps: 2
+seed: 7
+checkpoint: models/mpnn.pt
+teacher: chgnet

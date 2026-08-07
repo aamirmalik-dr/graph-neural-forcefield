@@ -1,0 +1,12 @@
+# Physics checks on the trained models: energy continuity as a neighbor
+# crosses the cutoff (dimer scan and in-crystal scan) and invariance under
+# translation, rotation, and permutation. The same properties are enforced
+# as unit tests on untrained models; this benchmark measures them on the
+# trained checkpoints.
+checkpoints:
+  mpnn: models/mpnn.pt
+  acsf_net: models/acsf_net.pt
+dimer_span: 0.5
+dimer_step: 0.005
+crystal_span: 0.4
+crystal_step: 0.005

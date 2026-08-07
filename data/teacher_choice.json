@@ -1,0 +1,20 @@
+{
+  "structure": "54-atom rattled BCC TiZrNb",
+  "candidates": {
+    "chgnet": {
+      "package": "chgnet",
+      "version": "0.4.2",
+      "checkpoint": "CHGNet v0.3.0 (default pretrained weights, MPtrj-trained)",
+      "license": "BSD-3-Clause (code and pretrained weights)",
+      "seconds_per_call": 0.182
+    },
+    "mace-mp0-small": {
+      "package": "mace-torch",
+      "version": "0.3.16",
+      "checkpoint": "MACE-MP-0 small",
+      "license": "MIT (code and MACE-MP-0 weights)",
+      "seconds_per_call": 0.497
+    }
+  },
+  "chosen": "chgnet"
+}

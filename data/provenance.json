@@ -1,0 +1,59 @@
+{
+  "label_source": "surrogate model labels from a pretrained universal potential, NOT DFT",
+  "teacher": {
+    "package": "chgnet",
+    "version": "0.4.2",
+    "checkpoint": "CHGNet v0.3.0 (default pretrained weights, MPtrj-trained)",
+    "license": "BSD-3-Clause (code and pretrained weights)"
+  },
+  "n_frames": 1566,
+  "n_groups": 72,
+  "compositions": [
+    "Nb",
+    "Ti",
+    "Ti2ZrNb",
+    "TiNb",
+    "TiZr",
+    "TiZrNb",
+    "TiZrNb2",
+    "Zr",
+    "ZrNb"
+  ],
+  "atoms_min": 16,
+  "atoms_max": 54,
+  "labeling_seconds_per_frame": 0.0949,
+  "md_generation_seconds": 325.4,
+  "config": {
+    "teacher": "chgnet",
+    "seed": 20260807,
+    "compositions": [
+      "Ti",
+      "Zr",
+      "Nb",
+      "TiZr",
+      "TiNb",
+      "ZrNb",
+      "TiZrNb"
+    ],
+    "holdout_compositions": [
+      "Ti2ZrNb",
+      "TiZrNb2"
+    ],
+    "reps_small": 2,
+    "reps_large": 3,
+    "rattle_amplitudes": [
+      0.05,
+      0.1,
+      0.18
+    ],
+    "rattle_frames_per_batch": 30,
+    "rattle_frames_large": 12,
+    "strain_frames_per_batch": 30,
+    "md_temperatures_k": [
+      600,
+      1400
+    ],
+    "md_steps": 240,
+    "md_sample_every": 12
+  }
+}

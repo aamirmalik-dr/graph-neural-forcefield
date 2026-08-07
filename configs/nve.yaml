@@ -1,0 +1,7 @@
+# NVE stability: velocity-Verlet with the trained potential; total energy
+# drift must stay near zero if forces are the exact energy gradient.
+checkpoint: models/mpnn.pt
+runs:
+  - {composition: TiZrNb, reps: 3, temperature_k: 300, steps: 1500, timestep_fs: 2.0, seed: 0}
+  - {composition: TiZrNb, reps: 3, temperature_k: 900, steps: 1500, timestep_fs: 2.0, seed: 1}
+  - {composition: Nb, reps: 3, temperature_k: 600, steps: 1500, timestep_fs: 2.0, seed: 2}
