@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gnff"
+version = "0.1.0"
+description = "From-scratch SchNet-style message-passing graph neural network potential for BCC TiZrNb, benchmarked head to head against descriptor baselines at matched data and budget"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Aamir Malik" }]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "torch>=2.0",
+    "ase>=3.22",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+teacher = ["chgnet>=0.3"]
+mp = ["mp-api>=0.41"]
+dev = [
+    "pytest>=7.0",
+    "ruff==0.15.22",
+    "black==26.5.1",
+    "nbclient>=0.9",
+    "nbformat>=5.9",
+    "ipykernel>=6.25",
+]
+
+[project.scripts]
+gnff = "gnff.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# notebook cell sources are string literals inside this generator script
+"scripts/build_notebook.py" = ["E501"]
+# tutorial cells use compact plotting idiom and long labels
+"notebooks/*.ipynb" = ["E501", "E702"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

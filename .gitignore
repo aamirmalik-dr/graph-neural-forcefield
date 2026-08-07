@@ -1,0 +1,20 @@
+# environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# full dataset stays local; the committed sample is data/sample_frames.extxyz
+data/full/
+
+# notebook checkpoints
+.ipynb_checkpoints/
+
+# committed artifacts are whitelisted by not ignoring:
+# models/*.pt (small trained checkpoints), results/*.json, results/figures/,
+# data/sample_frames.extxyz, data/provenance.json, data/anchors_*.json
