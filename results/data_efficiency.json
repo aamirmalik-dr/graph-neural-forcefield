@@ -1,0 +1,108 @@
+{
+  "sizes": [
+    102,
+    219,
+    420,
+    819,
+    882
+  ],
+  "results": {
+    "mpnn": [
+      {
+        "n_train": 102,
+        "e_mae_mev_per_atom": 35.16904860487768,
+        "f_mae_mev_per_a": 87.80774809158731,
+        "seconds": 135.7
+      },
+      {
+        "n_train": 219,
+        "e_mae_mev_per_atom": 15.491036248357506,
+        "f_mae_mev_per_a": 99.67984217120889,
+        "seconds": 169.1
+      },
+      {
+        "n_train": 420,
+        "e_mae_mev_per_atom": 12.117513373890036,
+        "f_mae_mev_per_a": 79.76638099128893,
+        "seconds": 302.7
+      },
+      {
+        "n_train": 819,
+        "e_mae_mev_per_atom": 9.523687409011346,
+        "f_mae_mev_per_a": 37.06194606958948,
+        "seconds": 442.1
+      },
+      {
+        "n_train": 882,
+        "e_mae_mev_per_atom": 10.485437795502428,
+        "f_mae_mev_per_a": 32.53031113546953,
+        "seconds": 481.7
+      }
+    ],
+    "acsf_net": [
+      {
+        "n_train": 102,
+        "e_mae_mev_per_atom": 67.00206571121714,
+        "f_mae_mev_per_a": 182.343642816145,
+        "seconds": 39.3
+      },
+      {
+        "n_train": 219,
+        "e_mae_mev_per_atom": 84.70262287730269,
+        "f_mae_mev_per_a": 188.01505559796635,
+        "seconds": 51.2
+      },
+      {
+        "n_train": 420,
+        "e_mae_mev_per_atom": 26.997453592595644,
+        "f_mae_mev_per_a": 128.86618383943642,
+        "seconds": 86.5
+      },
+      {
+        "n_train": 819,
+        "e_mae_mev_per_atom": 10.491308187590457,
+        "f_mae_mev_per_a": 61.667021262053524,
+        "seconds": 147.5
+      },
+      {
+        "n_train": 882,
+        "e_mae_mev_per_atom": 9.124580345822883,
+        "f_mae_mev_per_a": 62.586129402394995,
+        "seconds": 171.3
+      }
+    ],
+    "ridge": [
+      {
+        "n_train": 102,
+        "e_mae_mev_per_atom": 44.63130475172991,
+        "f_mae_mev_per_a": 189.43683983569196,
+        "seconds": 12.9
+      },
+      {
+        "n_train": 219,
+        "e_mae_mev_per_atom": 76.91050340944263,
+        "f_mae_mev_per_a": 181.4533800832735,
+        "seconds": 21.3
+      },
+      {
+        "n_train": 420,
+        "e_mae_mev_per_atom": 20.200560563418772,
+        "f_mae_mev_per_a": 160.1697435407868,
+        "seconds": 27.9
+      },
+      {
+        "n_train": 819,
+        "e_mae_mev_per_atom": 10.283608733629388,
+        "f_mae_mev_per_a": 92.20918392168727,
+        "seconds": 50.0
+      },
+      {
+        "n_train": 882,
+        "e_mae_mev_per_atom": 9.288258284025353,
+        "f_mae_mev_per_a": 86.47191434380422,
+        "seconds": 59.0
+      }
+    ]
+  },
+  "wall_seconds": 2198.9
+}

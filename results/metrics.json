@@ -1,0 +1,224 @@
+{
+  "label_provenance": {
+    "training_labels": "surrogate model labels from chgnet 0.4.2 (CHGNet v0.3.0 (default pretrained weights, MPtrj-trained)), NOT DFT",
+    "teacher_license": "BSD-3-Clause (code and pretrained weights)",
+    "dft_anchors": "Materials Project API (CC BY 4.0)"
+  },
+  "dataset": {
+    "n_frames": 1566,
+    "n_groups": 72,
+    "atoms_min": 16,
+    "atoms_max": 54,
+    "labeling_seconds_per_frame": 0.0949,
+    "split": {
+      "train": 882,
+      "val": 144,
+      "test": 192,
+      "transfer": 348
+    }
+  },
+  "models": {
+    "mpnn": {
+      "n_parameters": 40082,
+      "train_seconds": 662.9,
+      "inference_ms_54atoms": 11.83,
+      "test_e_mae_mev_per_atom": 7.0,
+      "test_f_mae_mev_per_a": 30.9,
+      "test_e_rmse_mev_per_atom": 13.41,
+      "test_f_rmse_mev_per_a": 43.3,
+      "transfer_e_mae_mev_per_atom": 6.38,
+      "transfer_f_mae_mev_per_a": 40.5,
+      "chosen_lr": 0.003
+    },
+    "acsf_net": {
+      "n_parameters": 7971,
+      "train_seconds": 216.5,
+      "inference_ms_54atoms": 13.29,
+      "test_e_mae_mev_per_atom": 8.2,
+      "test_f_mae_mev_per_a": 60.0,
+      "test_e_rmse_mev_per_atom": 12.31,
+      "test_f_rmse_mev_per_a": 114.7,
+      "transfer_e_mae_mev_per_atom": 9.67,
+      "transfer_f_mae_mev_per_a": 70.5,
+      "chosen_lr": 0.003
+    },
+    "ridge": {
+      "n_parameters": 147,
+      "train_seconds": 60.9,
+      "inference_ms_54atoms": 9.67,
+      "test_e_mae_mev_per_atom": 9.29,
+      "test_f_mae_mev_per_a": 86.5,
+      "test_e_rmse_mev_per_atom": 18.38,
+      "test_f_rmse_mev_per_a": 147.9,
+      "transfer_e_mae_mev_per_atom": 6.77,
+      "transfer_f_mae_mev_per_a": 91.1,
+      "chosen_alpha": 1e-10
+    }
+  },
+  "data_efficiency": {
+    "sizes": [
+      102,
+      219,
+      420,
+      819,
+      882
+    ],
+    "e_mae": {
+      "mpnn": [
+        35.17,
+        15.49,
+        12.12,
+        9.52,
+        10.49
+      ],
+      "acsf_net": [
+        67.0,
+        84.7,
+        27.0,
+        10.49,
+        9.12
+      ],
+      "ridge": [
+        44.63,
+        76.91,
+        20.2,
+        10.28,
+        9.29
+      ]
+    },
+    "f_mae": {
+      "mpnn": [
+        87.8,
+        99.7,
+        79.8,
+        37.1,
+        32.5
+      ],
+      "acsf_net": [
+        182.3,
+        188.0,
+        128.9,
+        61.7,
+        62.6
+      ],
+      "ridge": [
+        189.4,
+        181.5,
+        160.2,
+        92.2,
+        86.5
+      ]
+    }
+  },
+  "split_gap": {
+    "mpnn": {
+      "group_e_mae_mean": 5.69,
+      "group_e_mae_std": 0.94,
+      "random_frame_e_mae_mean": 6.51,
+      "random_frame_e_mae_std": 1.21,
+      "group_f_mae_mean": 34.6,
+      "group_f_mae_std": 3.0,
+      "random_frame_f_mae_mean": 35.9,
+      "random_frame_f_mae_std": 4.8
+    },
+    "acsf_net": {
+      "group_e_mae_mean": 9.65,
+      "group_e_mae_std": 2.69,
+      "random_frame_e_mae_mean": 8.23,
+      "random_frame_e_mae_std": 0.56,
+      "group_f_mae_mean": 66.8,
+      "group_f_mae_std": 11.2,
+      "random_frame_f_mae_mean": 55.5,
+      "random_frame_f_mae_std": 4.2
+    }
+  },
+  "eos": {
+    "Ti": {
+      "a0_model": 3.261,
+      "a0_teacher": 3.268,
+      "b0_model_gpa": 68.6,
+      "b0_teacher_gpa": 74.3,
+      "a0_anchor_dft": 3.2516,
+      "b0_anchor_dft_gpa": 111.049,
+      "anchor_id": "mp-73"
+    },
+    "Zr": {
+      "a0_model": 3.66,
+      "a0_teacher": 3.595,
+      "b0_model_gpa": 48.5,
+      "b0_teacher_gpa": 88.6,
+      "a0_anchor_dft": 3.5817,
+      "b0_anchor_dft_gpa": 88.4,
+      "anchor_id": "mp-41"
+    },
+    "Nb": {
+      "a0_model": 3.336,
+      "a0_teacher": 3.327,
+      "b0_model_gpa": 174.2,
+      "b0_teacher_gpa": 166.6,
+      "a0_anchor_dft": 3.3176,
+      "b0_anchor_dft_gpa": 172.05,
+      "anchor_id": "mp-75"
+    },
+    "TiZrNb": {
+      "a0_model": 3.387,
+      "a0_teacher": 3.385,
+      "b0_model_gpa": 101.3,
+      "b0_teacher_gpa": 104.9
+    }
+  },
+  "nve": [
+    {
+      "composition": "TiZrNb",
+      "temperature_k": 300.0,
+      "steps": 1500,
+      "timestep_fs": 2.0,
+      "drift_mev_per_atom_per_ps": 0.0001,
+      "e_tot_std_mev_per_atom": 0.0014
+    },
+    {
+      "composition": "TiZrNb",
+      "temperature_k": 900.0,
+      "steps": 1500,
+      "timestep_fs": 2.0,
+      "drift_mev_per_atom_per_ps": 0.0003,
+      "e_tot_std_mev_per_atom": 0.0034
+    },
+    {
+      "composition": "Nb",
+      "temperature_k": 600.0,
+      "steps": 1500,
+      "timestep_fs": 2.0,
+      "drift_mev_per_atom_per_ps": 0.0003,
+      "e_tot_std_mev_per_atom": 0.0035
+    }
+  ],
+  "physics": {
+    "mpnn": {
+      "dimer_max_step_change_mev": 0.1066,
+      "dimer_tail_flatness_mev": 0.0,
+      "crystal_max_step_change_mev": 5.39,
+      "rotation_delta_mev": 0.0,
+      "translation_delta_mev": 0.0,
+      "permutation_delta_mev": 0.0,
+      "force_fd_max_error_ev_per_a": 5.20347920307529e-09
+    },
+    "acsf_net": {
+      "dimer_max_step_change_mev": 0.5921,
+      "dimer_tail_flatness_mev": 0.0,
+      "crystal_max_step_change_mev": 6.588,
+      "rotation_delta_mev": 0.0,
+      "translation_delta_mev": 0.0,
+      "permutation_delta_mev": 0.0,
+      "force_fd_max_error_ev_per_a": 5.582255102609679e-09
+    }
+  },
+  "wall_seconds": {
+    "main": 1292.9,
+    "data_efficiency": 2198.9,
+    "split_gap": 3810.0,
+    "eos": 5.2,
+    "nve": 56.6,
+    "physics": 3.7
+  }
+}
