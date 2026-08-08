@@ -145,8 +145,11 @@ hop per interaction block.
 
 Sibling frames from one rattle batch are near-duplicates. The split therefore
 moves whole generation groups; a random-frame split would leak siblings across
-the boundary and flatter every number (the `split_gap` benchmark measures that
-gap on the full dataset: it is close to a factor of three on energies).""",
+the boundary. How much that flatters a model depends on the model: the
+`split_gap` benchmark on the full dataset measures about 15 percent energy
+flattery (and a 5x collapse of the seed spread) for the descriptor network,
+and none at all for the GNN at this capacity and budget. Details in
+RESULTS.md.""",
     ),
     (
         "code",
@@ -217,7 +220,7 @@ for ax, lab in zip(axes, ("energy (eV/atom)", "force (eV/A)")):
     ax.plot([lo, hi], [lo, hi], color="#c3c2b7", lw=1, zorder=0)
     ax.set_xlabel(f"teacher {lab}"); ax.set_ylabel(f"predicted {lab}")
     ax.legend(frameon=False, fontsize=8.5)
-fig.suptitle("Held-out-group parity: GNN vs ridge on identical descriptors... "
+fig.suptitle("Held-out-group parity: GNN vs the descriptor-ridge baseline, "
              "identical data, matched budget", y=1.02)
 fig.tight_layout(); plt.show()""",
     ),
