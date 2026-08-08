@@ -83,6 +83,19 @@ def fig_data_efficiency() -> None:
                     fontsize=8.5,
                     color=COLORS[name],
                 )
+        if direct:
+            # The headline claim, made visible: the GNN's smallest-data point
+            # sits at the force error the ridge baseline needs all frames for.
+            ridge_full = data["results"]["ridge"][-1][key]
+            ax.axhline(ridge_full, color=COLORS["ridge"], lw=1.0, ls=":", zorder=0)
+            ax.annotate(
+                f"ridge at full data ({ridge_full:.0f})",
+                (data["results"]["mpnn"][0]["n_train"], ridge_full),
+                textcoords="offset points",
+                xytext=(-2, -11),
+                fontsize=8,
+                color=COLORS["ridge"],
+            )
         ax.set_xscale("log")
         ax.set_yscale("log")
         ax.xaxis.set_major_locator(FixedLocator([100, 200, 400, 800]))
