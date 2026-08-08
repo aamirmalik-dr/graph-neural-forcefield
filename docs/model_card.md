@@ -52,8 +52,8 @@ the descriptor repo of this project cluster.
 
 mpnn: 80 epochs, batch 24, Adam, learning rate 3e-3 chosen by a 15-epoch
 validation screen over {1e-3, 3e-3} (both networks got the same grid),
-force weight 0.1, best-validation state selected; 665 s train time on CPU.
-acsf_net: same budget and grid, 196 s. ridge: closed-form weighted normal
+force weight 0.1, best-validation state selected; 663 s train time on CPU.
+acsf_net: same budget and grid, 217 s. ridge: closed-form weighted normal
 equations with the mean-normalized objective matching the network loss,
 alpha tuned on validation over {1e-10 ... 1e-2} (chose 1e-10), 61 s.
 

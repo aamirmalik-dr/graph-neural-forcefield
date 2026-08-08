@@ -28,8 +28,9 @@ everywhere. Three results carry the repository:
 1. **Forces are the GNN's decisive win.** At full data (882 frames): force
    MAE 30.9 meV/A vs 60.0 (ACSF network) vs 86.5 (ridge), with even larger
    RMSE gaps (43 vs 115 vs 148 meV/A: the descriptor models have heavy
-   error tails). With only 102 training frames the GNN already matches the
-   force accuracy the ridge baseline needs all 882 frames to reach.
+   error tails). With only 102 training frames the GNN is already within 2
+   percent of the force accuracy the ridge baseline needs all 882 frames to
+   reach (88 vs 86.5 meV/A).
 2. **Energies are not where the win is.** At full data all three models
    land within about 1.5 meV/atom of each other (and the ordering flips
    between reruns); on the two held-out transfer compositions the
@@ -109,9 +110,10 @@ notebooks/        executed tutorial notebook
 results/          per-benchmark JSONs, metrics.json, seven figures
 scripts/          generate/fetch/benchmark/figure/notebook tooling
 src/gnff/         the library
-tests/            44 tests: neighbor list vs ASE (strained cells, atoms
-                  outside the box), descriptor and model invariances, force
-                  vs finite differences, cutoff continuity, message-passing
+tests/            45 tests: neighbor list vs ASE (strained and strongly
+                  sheared cells, atoms outside the box), descriptor and model
+                  invariances, force vs finite differences, cutoff continuity,
+                  message-passing
                   range extension vs strict descriptor locality, split
                   integrity, EOS and NVE on analytic systems, CLI
 ```

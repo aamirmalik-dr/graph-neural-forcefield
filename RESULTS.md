@@ -23,8 +23,8 @@ monotone in alpha, so smaller values change nothing visible).
 
 | Model | Params | Test E MAE (meV/atom) | Test E RMSE | Test F MAE (meV/A) | Test F RMSE | Transfer E MAE | Transfer F MAE | Train (s) | Inference (ms, 54 atoms) |
 |---|---|---|---|---|---|---|---|---|---|
-| Message passing (GNN) | 40,082 | **7.00** | 13.41 | **30.9** | 43.3 | 6.38 | **40.5** | 665 | 11.8 |
-| ACSF network | 7,971 | 8.20 | 12.31 | 60.0 | 114.7 | 9.67 | 70.5 | 196 | 13.3 |
+| Message passing (GNN) | 40,082 | **7.00** | 13.41 | **30.9** | 43.3 | 6.38 | **40.5** | 663 | 11.8 |
+| ACSF network | 7,971 | 8.20 | 12.31 | 60.0 | 114.7 | 9.67 | 70.5 | 217 | 13.3 |
 | Ridge on ACSF | 147 | 9.29 | 18.38 | 86.5 | 147.9 | 6.77 | 91.1 | 61 | 9.7 |
 
 Reading this honestly:
@@ -66,10 +66,10 @@ same per-size budget.
 
 (E in meV/atom, F in meV/A.)
 
-- With 102 training frames the GNN already matches the force accuracy the
-  ridge baseline reaches with all 882 (88 vs 86 meV/A): roughly 8x data
-  efficiency on forces against the linear model, and the ACSF network
-  needs 800+ frames to beat it.
+- With 102 training frames the GNN comes within 2 percent of the force
+  accuracy the ridge baseline reaches with all 882 (88 vs 86.5 meV/A):
+  roughly 8x data efficiency on forces against the linear model, and the
+  ACSF network needs 800+ frames to beat it.
 - Below about 400 frames the GNN leads on everything, often by 2x or more.
 - At full data the energy numbers of all three models converge to within
   about 1.5 meV/atom and the ordering flips between runs (the 10.5 here vs
