@@ -56,6 +56,19 @@ def test_matches_ase_sheared_cell():
     assert got == ref
 
 
+def test_matches_ase_strongly_sheared_cell():
+    """Large shear: image counts differ per direction; row/column norm
+    confusion in image_ranges drops pairs here (regression test)."""
+    fr = bcc_supercell("Zr", 2, seed=8)
+    strain = np.eye(3)
+    strain[0, 1] = 0.9
+    frac = fr.positions @ np.linalg.inv(fr.cell)
+    fr.cell = fr.cell @ strain.T
+    fr.positions = frac @ fr.cell
+    got, ref = _pair_sets(fr, 6.0)
+    assert got == ref
+
+
 def test_matches_ase_atoms_outside_cell():
     """MD moves atoms outside the box; shifts must stay consistent."""
     fr = bcc_supercell("Ti", 2, seed=3)

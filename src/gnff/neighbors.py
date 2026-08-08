@@ -40,12 +40,15 @@ class PairList:
 def image_ranges(cell: np.ndarray, cutoff: float) -> np.ndarray:
     """Number of periodic images needed per lattice direction.
 
-    The perpendicular distance between lattice planes normal to reciprocal
-    vector k is 1 / |row k of inv(cell).T|; images are needed out to
-    ceil(cutoff / spacing).
+    The reciprocal vector dual to lattice direction k is COLUMN k of
+    inv(cell) (rows of cell are the lattice vectors), and the perpendicular
+    spacing of the lattice planes it indexes is 1 / |that column|; images are
+    needed out to ceil(cutoff / spacing). Using row norms instead would
+    under-count images for strongly sheared cells and silently drop pairs
+    (the strong-shear regression test guards this).
     """
     inv = np.linalg.inv(cell)
-    spacings = 1.0 / np.linalg.norm(inv, axis=1)
+    spacings = 1.0 / np.linalg.norm(inv, axis=0)
     return np.ceil(cutoff / spacings).astype(int)
 
 
