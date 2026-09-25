@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gnff"
-version = "0.1.0"
+version = "0.1.1"
 description = "From-scratch SchNet-style message-passing graph neural network potential for BCC TiZrNb, benchmarked head to head against descriptor baselines at matched data and budget"
 readme = "README.md"
 requires-python = ">=3.10"

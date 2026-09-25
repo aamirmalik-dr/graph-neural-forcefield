@@ -16,7 +16,7 @@ from gnff.models import AcsfNet, AcsfParams, MpnnConfig, MpnnPotential, RidgePot
 from gnff.splits import Split, group_split, random_frame_split
 from gnff.train import TrainSettings, train_potential
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "AcsfNet",
